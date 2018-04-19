@@ -5,15 +5,22 @@
 // document.getElementById("root").innerHTML=aa
 
 import Vue from "vue"
-import app  from "./components/app"
-// Vue.component("App",app)
-import ajax from "./tool/ajax"
-Vue.prototype.$ajax=ajax
+import mains  from "./main.vue"
 
+import ajax from "./tool/ajax"
+
+// 组件注册
+import "./components/register"
+
+
+var $bus=new Vue()
+
+Vue.prototype.$ajax=ajax
+Vue.prototype.$bus=$bus
 var vm=new Vue({
   el:"#app",
-  template:"<div><App /></div>",
+  template:"<div><Mains /></div>",
   components:{
-    App:app
+    Mains:mains
   }
 })
