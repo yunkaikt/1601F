@@ -75,15 +75,10 @@ export default new Vuex.Store({
    mutations:{
 
      add_num_M(state,item){
-        state.num+=item
-        
-        // state.name="zhangsan"
-        console.log( state)
+        state.num+=item   
      },
      getData_M(state,data){
-       console.log(data)
         Vue.set(state,"data",data)
-        console.log(state)
      }
    }
 })
