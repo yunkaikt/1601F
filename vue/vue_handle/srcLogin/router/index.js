@@ -24,6 +24,16 @@ export default new VueRouter({
       name:"loading",
       path:"/loading",
       component:()=>import("../components/loading")
+    },
+    {
+      name:"register",
+      path:"/register",
+      component:()=>import("../components/register")
+    },
+    {
+      name:"pc",
+      path:"/pc",
+      component:()=>import("../components/pc")
     }
   ]
 })

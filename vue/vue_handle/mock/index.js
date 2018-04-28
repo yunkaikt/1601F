@@ -99,8 +99,6 @@ module.exports = function (app) {
 
   })
   app.get("/api/getIndexData", function (req, res, next) {
-
-
     res.send({
       code: "1011", msg: "获取成功", data: {
         nav: {
@@ -108,7 +106,14 @@ module.exports = function (app) {
         }
       }
     })
-
-
-  })
+  }),
+  app.get("/api/getPCData", function (req, res, next) {
+    res.send({
+      code: "1011", msg: "获取成功", data: {
+        collect: {
+          project: "这里是pc页面"
+        }
+      }
+    })
+  })  
 }

@@ -12,6 +12,7 @@
       <el-form-item>
         <el-button type="primary" @click="submitForm('ruleForm2')">提交</el-button>
         <el-button @click="resetForm('ruleForm2')">重置</el-button>
+        <el-button @click="register">注册</el-button>
       </el-form-item>
     </el-form>
 </template>
@@ -60,11 +61,11 @@
             if (valid) {
                 console.log(this.ruleForm2)
                 this.axios.get("/api/login",{params:this.ruleForm2}).then((data)=>{
-                  console.log(data)
+               
                   if(data.data.code=="1001"){
                     console.log(data.data.data.userId)
                     this.setUserId_A(data.data.data.userId)
-                    this.$router.push("/index")
+                    this.$router.push(this.$route.query.url)
                   }
                   
                 })
@@ -80,7 +81,10 @@
         },
         ...mapActions([
             "setUserId_A"
-        ])
+        ]),
+        register(){
+          this.$router.push("/register")
+        }
       }
     }
   </script>

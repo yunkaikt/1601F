@@ -1,6 +1,6 @@
 <template>
   <div>
-      {{indexData.nav.title}}
+      {{pcData.collect.project}}
   </div>
    
 </template>
@@ -18,23 +18,24 @@
       },
       computed: {
         ...mapState([
-          "indexData"
+          "pcData"
         ])
       },
       methods:{
-        
+      
       },
       beforeRouteEnter: (to, from, next) => {
           if(store.state.userId){
-            if(!store.state.indexData){
-              sessionStorage.setItem("action","getIndexDataLoading_A")
-              next({path:"/loading",query:{url:"/index"}})
+            if(!store.state.pcData){
+            
+              sessionStorage.setItem("action","getPCDataLoading_A")
+              next({path:"/loading",query:{url:"/pc"}})
             }else{
               next()
             }
             
           }else{
-            next({path:"/login",query:{url:"/index"}})
+            next({path:"/login",query:{url:"/pc"}})
           }
          
       } 

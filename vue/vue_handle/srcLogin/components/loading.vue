@@ -14,10 +14,12 @@
         }
       },
       created(){
-          this[ sessionStorage.getItem("action")](this.goFn)
+        console.log(11111)
+         
+          this[sessionStorage.getItem("action")](this.goFn)
       },
       beforeCreate(){
-        
+        console.log(sessionStorage.getItem("action"))
       },
       methods: {
         ...mapActions([

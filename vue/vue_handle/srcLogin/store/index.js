@@ -6,7 +6,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state:{
       userId:null,
-      indexData:null
+      indexData:null,
+      pcData:null
   },
   actions:{
     getIndexData_A(){
@@ -16,14 +17,26 @@ export default new Vuex.Store({
         })
        })
     },  
+    getPCData_A(){
+      return new Promise((resolve,reject)=>{
+       axios.get("/api/getPCData").then((data)=>{
+         resolve(data.data)
+       })
+      })
+   },  
     getIndexDataLoading_A({commit,dispatch},cb){
       dispatch("getIndexData_A").then((data)=>{
-        console.log(22222)
         commit("setIndexData_M",data)
-
         cb()
       })
     },  
+    getPCDataLoading_A({commit,dispatch},cb){
+      dispatch("getPCData_A").then((data)=>{
+        commit("setPCData_M",data)
+        cb()
+      })
+    },  
+   
     setUserId_A({commit},id){
         commit("setUserId_M",id)
     }
@@ -34,6 +47,9 @@ export default new Vuex.Store({
     },
     setIndexData_M(state,data){
       state.indexData=data.data
+    },
+    setPCData_M(state,data){
+      state.pcData=data.data
     }
   }
 })
