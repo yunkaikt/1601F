@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    img {
+      width: 500px;
+      height: 300px;
+      display: block
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <img src="./image/load.gif" alt="" id="a1">
+    <img src="./image/load.gif" alt="" id="a2">
+    <img src="./image/load.gif" alt="" id="a3">
+    <img src="./image/load.gif" alt="" id="a4">
+  </div>
+
+  <script>
+    var $img=document.getElementsByTagName("img")
+    // var img1 = new Image()
+    // img1.src = "http://101.201.235.230:8088/image/a.png"
+
+    // img1.onload = function(){
+    //   $img[0].src="http://101.201.235.230:8088/image/a.png"
+    // }
+      var num=0
+    function loadImg(el,url){
+        return new Promise((resolve,reject)=>{
+             var img1 = new Image()
+              img1.src = url
+
+              img1.onload = function(){
+                el.src=url
+                if(num==3){
+                  reject(2334)
+                }else{
+                  resolve()
+                  num++
+                } 
+               
+              }
+        })
+    }
+
+
+    // loadImg($img[0],"http://101.201.235.230:8088/image/a.png").then((data)=>{
+    //     return loadImg($img[1],"http://101.201.235.230:8088/image/b.png")
+    // }).then(()=>{
+    //     return loadImg($img[2],"http://101.201.235.230:8088/image/c.png")
+    // }).then(()=>{
+    //     return loadImg($img[3],"http://101.201.235.230:8088/image/d.jpg")
+    // }).then(()=>{
+        
+    // }).catch((err)=>{
+    //     console.log(err)
+    // })  
+    
+
+    async function loadAll() { 
+        await loadImg($img[0],"http://a.hiphotos.baidu.com/image/pic/item/8326cffc1e178a82112604dffa03738da977e8b3.jpg")
+        await loadImg($img[1],"http://c.hiphotos.baidu.com/image/pic/item/fc1f4134970a304e9fcf65dfddc8a786c9175c22.jpg")
+        await loadImg($img[2],"http://h.hiphotos.baidu.com/image/h%3D300/sign=1d2520b700f431ada3d245397b37ac0f/d058ccbf6c81800ab64a4c2bbd3533fa828b476c.jpg")
+        await loadImg($img[3],"http://a.hiphotos.baidu.com/image/pic/item/6d81800a19d8bc3e0104c2ef8e8ba61ea8d34583.jpg")
+    }
+
+    loadAll().then(()=>{
+      console.log(1)
+    }).catch((err)=>{
+      console.log(err)
+    })
+
+    // Promise.all([
+    //   loadImg($img[0],"http://101.201.235.230:8088/image/a.png"),
+    //   loadImg($img[1],"http://101.201.235.230:8088/image/b.png"),
+    //   loadImg($img[0],"http://101.201.235.230:8088/image/c.png"),
+    //   loadImg($img[0],"http://101.201.235.230:8088/image/d.jpg")
+    // ]).then(()=>{
+
+    // }).catch((err)=>{
+    //   console.log(err)
+    // })
+
+
+    
+
+  </script>
+</body>
+
+</html>

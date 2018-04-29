@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+    *{margin:0;padding:0;list-style: none}
+    #cutpage{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin:20px 0;
+    }
+    #cutpage ul{
+      display: flex;
+      justify-content: flex-start;
+      margin-left: 20px;
+    }
+    #cutpage li{
+      width: 30px;
+      height: 30px;
+      border: 1px solid blue;
+      line-height: 30px;
+      text-align: center;
+    }
+    .active{
+      background: red;
+      color: white;
+    }
+  </style>
+
+</head>
+<body>
+    <div id="cutpageContent">
+        <!-- <div id="cutpage">
+            <span>总条数：</span>
+            <select name="" id="">
+                <option value="2">2条/页</option>
+                <option value="5">5条/页</option>
+                <option value="10">10条/页</option>
+      
+            </select>
+            <ul>
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+            </ul>
+          </div> -->
+    </div>
+    <script src="./cutpage.js"></script>
+  <script>
+    var arr=[]
+    for(var i=0;i<13;i++){
+        arr.push({
+          name:"zhagnsan"+i,
+          addr:"beijing"+i
+        })
+    }
+   
+    var cutpage=new CutPage({
+          el:document.getElementById("cutpageContent"),
+          data:arr,
+          pageLength:[2,5,10,15],
+          pageNumCB:function(data){
+            console.log(data)
+          },
+          pageLengthNumCB:function(){
+
+          }
+      })
+
+
+      cutpage.init()
+  </script>
+</body>
+</html>
