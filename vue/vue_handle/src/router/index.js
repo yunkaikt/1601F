@@ -26,10 +26,18 @@ import project from "../components_router/project"
 export default new VueRouter({
   // mode: 'history',
   // base:"/app/",
+  scrollBehavior (to, from, savedPosition) {
+    console.log(savedPosition)
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 200 }
+    }
+  },
   routes:[
     {
       path:"/",
-      redirect:"/tm"
+      redirect:"/one"
     },
     {
       name:"index",
@@ -98,29 +106,18 @@ export default new VueRouter({
       component:loading,
     },
     {
-<<<<<<< HEAD
       name:"tm",
       path:"/tm",
       component:()=>import("../components_vuex/tm/vuex"),
-=======
-      name:"vuex",
-      path:"/vuex",
-      component:vuex,
->>>>>>> 858c1ac195d6226d13ffcdc19cbf8d59d46fa678
       children:[
         {
           name:"show",
           path:"show",
-<<<<<<< HEAD
           component:()=>import("../components_vuex/tm/show"),
-=======
-          component:()=>import("../components_vuex/show"),
->>>>>>> 858c1ac195d6226d13ffcdc19cbf8d59d46fa678
         },
         {
           name:"actions",
           path:"actions",
-<<<<<<< HEAD
           component:()=>import("../components_vuex/tm/actions"),
         }
       ]
@@ -139,11 +136,47 @@ export default new VueRouter({
           name:"actions",
           path:"actions",
           component:()=>import("../components_vuex/zfb/actions"),
-=======
-          component:actions,
->>>>>>> 858c1ac195d6226d13ffcdc19cbf8d59d46fa678
         }
       ]
     },     
+    {
+      name:"roundlife",
+      path:"/roundlife",
+      component:()=>import("../components_roundLife/index"),
+      // beforeEnter(to,from,next){
+      //   console.log("beforeEnter")
+      //   next()
+      // },
+      // children:[
+      //   {
+      //     name:"one",
+      //     path:"one",
+      //     component:{
+      //       template:"<div>one</div>",
+      //       mounted(){
+      //         console.log("haha")
+      //       }
+      //     }
+      //   },
+      //   {
+      //     name:"two",
+      //     path:"two",
+      //     component:{
+      //       template:"<div>two</div>"
+      //     }
+      //   }
+      // ]
+    },     
+    {
+      name:"one",
+      path:"/one",
+      component:()=>import("../components_scroll/one"),
+    },
+    {
+      name:"two",
+      path:"/two",
+      component:()=>import("../components_scroll/two"),
+    }
   ]
+ 
 })

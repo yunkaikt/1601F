@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="routerh">
       <h2>这里是首页</h2>
       <ul>
         <li>
@@ -49,3 +49,10 @@
        }
   }
 </script>
+<style>
+  .routerh{
+    height: 1400px;
+    background: red
+  }
+  
+  </style>
