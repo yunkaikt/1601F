@@ -40,6 +40,8 @@ import LifeRound from "./lifeRound"
 import Data from "./data/parent"
 import Style1 from "./styleTest/style1"
 import Style2 from "./styleTest/style2"
+import IfElesMap from "./ifElseMap"
+import Com from "./Com"
 class App extends Component{
     constructor(props){
       super(props)
@@ -74,8 +76,13 @@ class App extends Component{
         {/* 数据相关 */}
               {/* <Data /> */}
         {/* 样式相关 */}
-              <Style1 />
-              <Style2 />
+              {/* <Style1 />
+              <Style2 /> */}
+        {/* 条件渲染 */}
+            {/* <IfElesMap /> */}
+        {/* 受控组件 */}
+              <Com />
+
               </div>
     }
    

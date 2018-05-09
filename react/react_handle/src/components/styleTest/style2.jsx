@@ -20,7 +20,6 @@ class LifeRound extends Component{
            <p style={innerStyle}>测试组件内部样式的生效</p>
     </div>
   }
- 
 }
 
 export default LifeRound
