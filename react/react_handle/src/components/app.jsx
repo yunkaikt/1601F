@@ -42,6 +42,9 @@ import Style1 from "./styleTest/style1"
 import Style2 from "./styleTest/style2"
 import IfElesMap from "./ifElseMap"
 import Com from "./Com"
+import Mparent from "./message/parent"
+import Shoping from "./shoping/index"
+import Refcom from "./refs/refCom"
 class App extends Component{
     constructor(props){
       super(props)
@@ -81,8 +84,13 @@ class App extends Component{
         {/* 条件渲染 */}
             {/* <IfElesMap /> */}
         {/* 受控组件 */}
-              <Com />
-
+              {/* <Com /> */}
+         {/* 组件通讯 */}
+              {/* <Mparent /> */}
+              {/* 购物车 */}
+              {/* <Shoping /> */}
+              {/* ref的使用 */}
+              <Refcom ref="parent"/>
               </div>
     }
    
