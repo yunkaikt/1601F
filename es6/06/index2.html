@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="./cutpage.css"> -->
+</head>
+<body>
+
+  <ul id="showContent">
+
+  </ul>
+  <div id="aa"></div>
+  <script src="./cutpage.js"></script>
+  <script>
+    var arr=[]
+    for(var i=0;i<13;i++){
+        arr.push({
+          name:"zhagnsan"+i,
+          addr:"beijing"+i
+        })
+    }
+   
+    var cutpage=new CutPage({
+          el:document.getElementById("aa"),
+          data:arr,
+          pageLength:[2,5,10,15],
+          pageNumCB:function(data){
+            console.log(data)
+            var $el=document.getElementById("showContent")
+            var $html=``
+            data.forEach(function(i) {
+              $html+=`<li>${i.name}----${i.addr}</li>`
+            }, this);
+            $el.innerHTML=$html
+          },
+          pageLengthNumCB:function(data){
+            console.log(data)
+          }
+      })
+
+
+      cutpage.init()
+  </script>
+</body>
+</html>

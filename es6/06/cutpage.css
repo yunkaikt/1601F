@@ -1,0 +1,23 @@
+*{margin:0;padding:0;list-style: none}
+#cutpage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:20px 0;
+}
+#cutpage ul{
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 20px;
+}
+#cutpage li{
+  width: 30px;
+  height: 30px;
+  border: 1px solid blue;
+  line-height: 30px;
+  text-align: center;
+}
+.active{
+  background: red;
+  color: white;
+}

@@ -1,0 +1,13 @@
+{
+  "presets": [
+        //  "stage-2",
+      //  "es2015"
+      // "latest"
+      // "env",
+      // "stage-0"
+      "es2015",
+      "stage-3"
+    ],
+    "plugins": ["syntax-dynamic-import"]
+}
+  
