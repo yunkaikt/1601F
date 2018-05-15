@@ -1,12 +1,8 @@
 
 import React,{Component} from "react"
-<<<<<<< HEAD
 import {
   Link
 } from "react-router-dom"
-=======
-
->>>>>>> d19114ad95ab739d881ac89b3fe347df448de5f0
 
 class App extends Component{
     constructor(props){
@@ -15,7 +11,6 @@ class App extends Component{
     }
     render(){
       return <div className="app">
-<<<<<<< HEAD
                 <ul>
                   <li>
                    <Link to="/tab">tab</Link>
@@ -47,9 +42,6 @@ class App extends Component{
                       
                 {this.props.children}
                 
-=======
-                {this.props.children}
->>>>>>> d19114ad95ab739d881ac89b3fe347df448de5f0
               </div>
     }
    
