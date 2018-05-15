@@ -64,4 +64,7 @@ module.exports = function(app) {
             arr
         })
     })
+    app.get("/api/dataList", function(req, res, next) {
+        res.send(list)
+    })
 }

@@ -18,6 +18,12 @@ import Parent from "../components/parent/parent"
 import Navlinks from "../components/navlink/navlink"
 import Hocgetdata from "../components/hocgetdata"
 import Hocgetdataasync from "../components/hocgetdataasync"
+import HocHandleData from "../components/hocHandleData"
+
+// 使用
+
+
+
 
 let childRouter=()=>{
   return <Tab>
@@ -55,6 +61,12 @@ const RouterRedirect=()=>{
   )
 }
 
+// 封装了一个组件，采用属性传值的方式，将将要加载的组件使用import方法进行包装，传入LazyComponet组件，然后进行异步加载，加载完毕，进行渲染；(封装的lazyComponent组件)
+import LazyComponent from "./tool/LazyComponent"
+let lazyComponentHandle=()=>{
+  return <LazyComponent lazy={()=>{return import("../components/lazyCom")}}/>
+}
+console.log(HocHandleData)
 
 let routerBase=() => {
   return (<Router basename="/app">
@@ -74,7 +86,12 @@ let routerBase=() => {
         <Route path="/navlink" render={NavLinkRouter}/>
         <Route path="/hocgetdata" component={Hocgetdata}/>
         <Route path="/hocgetdataasync" component={Hocgetdataasync}/>
-       
+        <Route path="/hocHandleData" component={HocHandleData}/>
+
+        <Route path="/lazyComponent" component={lazyComponentHandle}/>
+        
+
+
         <Route path='/prompt' render={()=>{
                return (
                  <div>

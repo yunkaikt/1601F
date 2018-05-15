@@ -39,7 +39,7 @@ let GetDataHocAsync=(Com,urlList)=>{
       render(){
   
         return <div>
-          {this.state.state?<Com getData={this.state.data}/>:null} 
+          {this.state.state?<Com getData={this.state.data} {...this.props}/>:null} 
         </div>
   
       }

@@ -35,6 +35,12 @@ class App extends Component{
                   <li>
                     <Link to="/hocgetdataasync">高阶组件获取数据接口间存在依赖关系</Link>
                   </li>
+                  <li>
+                    <Link to="/hocHandleData">高阶组件获取数据并且处理数据双重高阶</Link>
+                  </li>
+                  <li>
+                    <Link to="/lazyComponent">组件懒加载</Link>
+                  </li>
                 </ul>
                
                
