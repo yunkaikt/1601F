@@ -2,10 +2,9 @@ import React, { Component } from 'react'
 import axios from "axios"
 import propTypes from "prop-types"
 import {
-    Route,
-    Link
+    Route
 } from "react-router-dom"
-class Index extends Component {
+class Register extends Component {
     static contextTypes={
         router:propTypes.object.isRequired
     }
@@ -23,16 +22,16 @@ class Index extends Component {
         })
        
     }
-    login(){
+    registerfn(){
         let {username,password}=this.state
-        axios.post("/api/login",{username,password}).then((data)=>{
+        axios.post("/api/register",{username,password}).then((data)=>{
             
-            if(data.data.code=="10003"){
-                sessionStorage.setItem("userId",data.data.userId)
-                this.props.history.push(sessionStorage.getItem("url"))
-                // this.props.history.push(sessionStorage.getItem("url"))
+            if(data.data.code=="10005"){
+                
+                this.props.history.push("/user/login")
+               
             }else{
-                // this.props.history.push("/")
+               alert(data.data.msg)
             }
         })  
     }
@@ -40,7 +39,7 @@ class Index extends Component {
     render() {
         return (
             <div>
-               <h2>登录页面</h2>
+               <h2>注册页面</h2>
                <ul>
                    <li>
                        <label htmlFor="userName">用户名：</label>
@@ -51,8 +50,8 @@ class Index extends Component {
                        <input type="password" name="password" onChange={this.changeData.bind(this)}/>
                    </li>
                    <li>
-                       <button onClick={this.login.bind(this)}>登录</button>
-                       <Link to="/user/register">注册</Link>
+                       <button onClick={this.registerfn.bind(this)}>注册</button>
+                      
                    </li>
                </ul>
             </div>
@@ -61,7 +60,7 @@ class Index extends Component {
 }
 
 let routerHandle=()=>{
-    return  <Route path='/user/login' component={Index}/>
+    return  <Route path='/user/register' component={Register}/>
 }
 
 export default routerHandle

@@ -8,7 +8,8 @@ export default (Com)=>{
             this.state={
                 Com:null
             }
-            console.log(props)
+            
+            console.log(props.match)
         }
         componentWillMount(){
             if(sessionStorage.getItem("userId")){
@@ -18,11 +19,21 @@ export default (Com)=>{
                             Com:Com
                         })
                     }else{
+                        console.log(this.props.match.path)
+                        sessionStorage.setItem("url",this.props.match.path)
                         this.props.history.push("/user/login")
+                        // this.props.history.push({
+                        //     pathname:"/user/login",
+                        //     state:{
+                        //         url:this.props.match.path
+                        //     }
+                        // })
                     }
                 })
             }else{
+                sessionStorage.setItem("url",this.props.match.path)
                 this.props.history.push("/user/login")
+
             }
         }
         render() {

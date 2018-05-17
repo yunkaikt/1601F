@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 
 import {
-    Route
+    Route,
+    Link
 } from "react-router-dom"
 class User extends Component {
     render() {
@@ -15,11 +16,13 @@ class User extends Component {
 }
 
 import Login from "./login"
+import Register from "./register"
 
 let childrenRouter=()=>{
     return (
         <User>
             <Login />
+            <Register />
         </User>
     )
 }

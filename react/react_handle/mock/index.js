@@ -26,7 +26,7 @@ let userList=[
     }
 ]
 
-
+let num=1
 var bodyParser = require('body-parser');
 module.exports = function(app) {
 
@@ -99,7 +99,7 @@ module.exports = function(app) {
         }
        
     })
-
+    // 登录接口
     app.post("/api/login", function(req, res, next) {
         let {username,password}=req.body
         let resData=null
@@ -121,6 +121,34 @@ module.exports = function(app) {
             res.send({
                 code:"10004",
                 msg:"登录失败"
+            })
+        }
+    })
+
+    // 注册接口
+    app.post("/api/register", function(req, res, next) {
+        let {username,password}=req.body
+        let resData=null
+        let state=userList.every((i)=>{
+            if(i.username==username){
+                resData=i
+                return false
+            }else{
+                return true
+            }
+        })
+        if(state){
+            num++
+            let obj={userId:num,...req.body}
+            userList.push(obj)
+            res.send({
+                code:"10005",
+                msg:"用户添加成功"
+            })
+        }else{
+            res.send({
+                code:"10006",
+                msg:"用户添加失败"
             })
         }
        
