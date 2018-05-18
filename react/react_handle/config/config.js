@@ -4,7 +4,8 @@ module.exports = {
     base: {
         // entry:path.join(__dirname,"../src/main.js"),
         // entry: path.join(__dirname, "../srcRouter/main.jsx"),
-        entry: path.join(__dirname, "../srcLogin/main.jsx"),
+        // entry: path.join(__dirname, "../srcLogin/main.jsx"),
+        entry: path.join(__dirname, "../srcFlux/main.jsx"),
         outputPath: path.join(__dirname, "../dist"),
         outputFileName: "[id]-[name]-[hash].js",
         templatePath: "./src/index.html",

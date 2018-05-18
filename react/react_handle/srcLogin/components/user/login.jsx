@@ -6,10 +6,11 @@ import {
     Link
 } from "react-router-dom"
 class Index extends Component {
+    // js路由跳转时的push方法，来源于这个对象
     static contextTypes={
         router:propTypes.object.isRequired
     }
-    constructor(props,contextTypes){
+    constructor(props,context){
         super(props)
         this.state={
             username:"",
@@ -36,7 +37,11 @@ class Index extends Component {
             }
         })  
     }
-    
+    pushfn(){
+        console.log(this.context)
+        console.log(this.props)
+        this.context.router.history.push({pathname:"/user/register",state:{id:1}})
+    }
     render() {
         return (
             <div>
@@ -53,6 +58,7 @@ class Index extends Component {
                    <li>
                        <button onClick={this.login.bind(this)}>登录</button>
                        <Link to="/user/register">注册</Link>
+                       <button onClick={this.pushfn.bind(this)}>路由跳注册传参</button>
                    </li>
                </ul>
             </div>

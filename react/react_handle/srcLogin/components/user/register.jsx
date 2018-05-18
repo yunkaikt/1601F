@@ -10,6 +10,7 @@ class Register extends Component {
     }
     constructor(props,contextTypes){
         super(props)
+        console.log(this.props.location.state)
         this.state={
             username:"",
             password:""
