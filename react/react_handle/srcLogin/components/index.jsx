@@ -11,32 +11,43 @@ class Index extends Component {
     constructor(props){
         super(props)
         this.state={
-            state:1
+            redpacketState:1,
+            signState:2
         }
-        observer.$on("change",(state)=>{
-            this.setState({
-                state:state
+        observer.$on("change",(obj)=>{
+            this.setState(obj,()=>{
+                console.log(this.state.redpacketState)
             })
+            
         })
     }
 
     render() {
         let el=null
-        switch (this.state.state){
+        switch (this.state.redpacketState){
             case 1:{
-                el=<Popup msg="请领取红包"/>
-            }break;
-            case 2:{
-                el=<Popup msg="请签到"/>
-            }break;
-            case 3:{
+                if(sessionStorage.getItem("redpacketState")!="2"){
+                    el=<Popup msg="请领取红包" type="redpack"/>
+                }
                 
             }break;
-            case 4:{
-                el=<Popup  msg="请领取红包"/>
-            }break;
+           default :{
+                switch (this.state.signState){
+                    case 1:{
+                        if(sessionStorage.getItem("signState")!=2){
+                            el=<Popup msg="请签到" type="sign"/>
+                        }
+                       
+                    }break;
+                   
+                    default:{
+                        el=null
+                    }
+                }
+           }
             
         }
+       
         return (
             <div>
                 首页
