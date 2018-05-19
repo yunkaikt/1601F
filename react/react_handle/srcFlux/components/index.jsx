@@ -14,13 +14,23 @@ class Index extends Component {
         console.log(Store.getData("num"))
 
         this.state={
-            num:Store.getData("num")
+            // num:Store.getData("num")
+            num:Store.getData().num
         }
-        Store.observer(()=>{
-            this.setState({
-                num:Store.getData("num")
-            })
-        })
+        setInterval(()=>{
+            // Store.getData().num++
+            // this.setState({
+            //     num:Store.getData().num
+            // })
+            // console.log( Store.getData().num)
+            console.log(Store[Symbol("state")])
+        },1000)
+        
+        // Store.observer(()=>{
+        //     this.setState({
+        //         num:Store.getData("num")
+        //     })
+        // })
         // flux.observer.$on("change",()=>{
         //     this.setState({
         //         num:flux.initState.num

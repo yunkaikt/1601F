@@ -4,6 +4,7 @@ import Store from "../tool/flux"
 let initState={
     num:1
 }
+
 export let actions={
     addNum(text){
         return {
