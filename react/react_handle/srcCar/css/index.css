@@ -1,0 +1,147 @@
+::-webkit-scrollbar {    
+  width: 0px;
+  display: none;
+}
+.carAddress{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:0.2rem 0.2rem;
+}
+
+.carAddress a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cityAddress h4{
+  padding-left: 0.5rem;
+}
+.cityAddress{
+  padding:0.5rem 0;
+}
+.cityAddress p{
+  /* height: 1rem; */
+  padding: 0.3rem 0.5rem;
+}
+.carChoose{
+  
+  padding:0.3rem 0.5rem;
+  
+}
+.sectionList h4{
+  padding-left: 0.5rem;
+}
+.chooseNavTitle{
+  padding:0rem 0.3rem;
+  margin:0 0.3rem;
+  border-left: 1px solid white
+}
+.chooseNav{
+  position: fixed;
+  width:100%;
+  top:0px
+}
+.NavStyle{
+  position: fixed;
+  width:100%;
+  top:0px;
+  display:flex;
+  align-items:center;
+  justify-content:left;
+  height:45px
+}
+.chooseCity{
+  padding-top:45px;
+}
+/* .cityList{
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: flex-start;
+
+} */
+.cityList{
+    margin:0.1rem 0.2rem;
+     padding:0.2rem 0.3rem;
+
+}
+
+.licencePlate{
+  padding-top:45px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.licencePlateMain {
+  overflow: hidden;
+  flex: 1;
+} 
+.licencePlateMain {
+  overflow: hidden
+} 
+.licencePlateAside {
+  float: left;
+ width: 47%;
+  height: 100%;
+  overflow-y: scroll;
+} 
+.licencePlateAside h4 {
+  height: 0.5rem;
+  line-height: 0.5rem;
+  background: #dcdcdc;
+  padding-left: 0.2rem;
+} 
+.licencePlateAside li {
+  height: 1rem;
+  line-height: 1rem;
+  background: #eaeaea;
+  padding-left:0.5rem
+} 
+.licencePlateAside {
+  float: left;
+ width: 47%
+} 
+.licencePlateCity {
+  float: left;
+  width: 45%;
+  padding-left:2%;
+  height: 100%;
+  overflow-y: scroll;
+} 
+.licencePlateCity li{
+ height: 1rem;
+ line-height: 1rem;
+  border-bottom: 1px solid #cccccc;
+ 
+} 
+.licencePlateLetter {
+  float: left;
+  width: 6%;
+ text-align: center;
+ background: lightgrey;
+ height: 100%;
+ overflow-y: scroll;
+} 
+.licencePlateLetter li{
+ height: 1rem;
+} 
+.cityAddressLicen{
+  padding:0rem 0;
+  background: #eaeaea
+}
+.cityAddressLicen p{
+  /* height: 1rem; */
+  padding: 0.3rem 0.5rem;
+}
+
+.chooseCityClass{
+  border: 1px solid orange;
+  border-radius: 0.05rem;
+}
+.activeColor{
+  background: white !important;
+}

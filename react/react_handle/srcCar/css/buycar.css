@@ -1,0 +1,52 @@
+.searchCarInput{
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: lightgrey
+}
+
+.searchCarInput input{
+  border: none;
+  outline: none;
+  padding:0.1rem 0.2rem;
+  width: 2rem;
+  background: lightgrey
+}
+
+.select{
+  background: lightblue;
+ margin-top:45px;
+ position: fixed;
+ top:0px;
+ z-index: 1000;
+ width: 100%
+}
+.select a{
+    display: flex;
+    height: 0.8rem;
+    align-items: center;
+    justify-content: center;
+    
+}
+.select p{
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.selfList{
+  width: 96%;
+  border-radius: 0.1rem;
+  margin:0.2rem auto;
+  background: lightblue
+}
+.main{
+
+  margin-top:100px;
+}
+.love{
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}

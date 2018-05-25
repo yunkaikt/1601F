@@ -1,6 +1,9 @@
 var Mock = require("mockjs")
 var Random = Mock.Random
 var shopcart = require("./shopcart")
+
+var cityList=require("./city")
+var provinceCity=require("./provinceCity")
     // Random.cname()
     // Random.city()
 
@@ -153,4 +156,11 @@ module.exports = function(app) {
         }
        
     })
+    // 二手车相关
+    app.get('/api/cityList', function (req, res) {
+        res.json(cityList);
+    });
+    app.get('/api/provinceCity', function (req, res) {
+    res.json(provinceCity);
+    });
 }

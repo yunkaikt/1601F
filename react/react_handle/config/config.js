@@ -1,5 +1,6 @@
 var path = require("path")
 var api = require("../mock/index")
+
 module.exports = {
     base: {
         // entry:path.join(__dirname,"../src/main.js"),
@@ -7,10 +8,12 @@ module.exports = {
         // entry: path.join(__dirname, "../srcLogin/main.jsx"),
         // entry: path.join(__dirname, "../srcFlux/main.jsx"),
         // entry: path.join(__dirname, "../srcRedux/main.jsx"),
-        entry: path.join(__dirname, "../srcReactRedux/main.jsx"),
+        // entry: path.join(__dirname, "../srcReactRedux/main.jsx"),
+        entry: path.join(__dirname, "../srcCar/main.jsx"),
         outputPath: path.join(__dirname, "../dist"),
         outputFileName: "[id]-[name]-[hash].js",
-        templatePath: "./src/index.html",
+        templatePath: "./srcCar/index.html",
+        // templatePath: "./src/index.html",
         // templatePath:"./srcLogin/index.html",
         htmlMinify: {
             removeComments: true, //去除注释
@@ -54,7 +57,11 @@ module.exports = {
                     "regenerator": true,
                     "moduleName": "babel-runtime"
                 }
-            ], "syntax-dynamic-import", "transform-object-rest-spread", "transform-react-jsx"
+            ], "syntax-dynamic-import", "transform-object-rest-spread", "transform-react-jsx",["import", {
+                libraryName: "antd-mobile",
+                style: true,
+              }]
         ]
+        
     }
 }
